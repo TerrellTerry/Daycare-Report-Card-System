@@ -1,0 +1,14 @@
+<p>Login</p>
+<form>
+    <fieldset>
+        <legend>Enter Username and Password</legend>
+
+        <label for="guardianUsername">Username: </label>
+        <input name="guardianUsername" type="text" [(ngModel)]="guardianUsername">
+        <br>
+
+        <label for="guardianPassword">Password: </label>
+        <input name="guardianPassword" type="password" [(ngModel)]="guardianPassword">
+    </fieldset>
+    <button class="btnForm" (click)="validateLogin()">Login</button>
+</form>

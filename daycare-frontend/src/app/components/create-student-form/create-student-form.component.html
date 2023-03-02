@@ -1,0 +1,20 @@
+<p>Create a New Student</p>
+
+<form>
+    <fieldset>
+        <legend>Add a Student</legend>
+
+        <label for="firstName">First Name: </label>
+        <input name="firstName" type="text" [(ngModel)]="firstName">
+        <br>
+
+        <label for="lastName">Last Name: </label>
+        <input name="lastName" type="text" [(ngModel)]="lastName">
+        <br>
+
+        <label for="guardianUsername">Guardian Username: </label>
+        <input name="guardianUsername" type="text" [(ngModel)]="guardianUsername">
+
+    </fieldset>
+    <button class="btnForm" (click)="registerStudent()">Add Student</button>
+</form>

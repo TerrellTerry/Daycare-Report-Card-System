@@ -1,0 +1,70 @@
+<html>
+    <div *ngIf="role == 'Teacher'">
+        <div class="container">
+            <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page"><img src="../../../assets/clipart2238855-fococlipping-standard.png" width="200" height="75">
+            <div class="center"><button>HOME</button></div></a>
+        </div>
+    
+        <div *ngIf="role == 'Teacher' && loggedIn == true" class="container">
+            <a routerLink="/createstudentpage" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <img src="../../../assets/clipart2238855-fococlipping-standard.png" width="200" height="75">
+            <div class="center"><button>CREATE</button></div></a>
+        </div> 
+    
+        <div class="container">
+            <a routerLink="/studentpage" routerLinkActive="active" ariaCurrentWhenActive="page">
+            <img src="../../../assets/clipart2238855-fococlipping-standard.png" width="200" height="75">
+            <div class="center"><button>STUDENTS</button></div></a>
+        </div>
+    
+        <div class="container" *ngIf="loggedIn == true">
+            <a (click)="logoutUser()">
+                <img src="../../../assets/clipart2238855-fococlipping-standard.png" width="200" height="75">
+                <div class="center"><button>LOGOUT</button></div></a>
+        </div>
+        
+        <div class="container" *ngIf="loggedIn == false">
+            <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <img src="../../../assets/clipart2238855-fococlipping-standard.png" width="200" height="75">
+            <div class="center"><button>LOGIN</button></div></a>
+        </div>
+    </div>
+
+    <div *ngIf="role == 'Guardian'">
+        <div class="container" style="width:33%">
+            <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page"><img src="../../../assets/clipart2238855-fococlipping-standard.png" width="200" height="75">
+            <div class="center"><button>HOME</button></div></a>
+        </div>
+    
+        <div class="container" style="width:33%">
+            <a routerLink="/studentpage" routerLinkActive="active" ariaCurrentWhenActive="page">
+            <img src="../../../assets/clipart2238855-fococlipping-standard.png" width="200" height="75">
+            <div class="center"><button>STUDENTS</button></div></a>
+        </div>
+    
+        <div class="container" style="width:33%" *ngIf="loggedIn == true">
+            <a (click)="logoutUser()">
+                <img src="../../../assets/clipart2238855-fococlipping-standard.png" width="200" height="75">
+                <div class="center"><button>LOGOUT</button></div></a>
+        </div>
+        
+        <div class="container" style="width:33%" *ngIf="loggedIn == false">
+            <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <img src="../../../assets/clipart2238855-fococlipping-standard.png" width="200" height="75">
+            <div class="center"><button>LOGIN</button></div></a>
+        </div>
+    </div>
+
+    <div *ngIf="loggedIn == false">
+        <div class="container" style="width:50%">
+            <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page"><img src="../../../assets/clipart2238855-fococlipping-standard.png" width="200" height="75">
+            <div class="center"><button>HOME</button></div></a>
+        </div>
+        
+        <div class="container" style="width:50%">
+            <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <img src="../../../assets/clipart2238855-fococlipping-standard.png" width="200" height="75">
+            <div class="center"><button>LOGIN</button></div></a>
+        </div>
+    </div>
+</html>

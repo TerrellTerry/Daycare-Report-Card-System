@@ -1,0 +1,42 @@
+<h3>Student Grades</h3>
+
+<form *ngIf="role == 'Teacher'">
+    <fieldset>
+    <legend>Create new Grade!</legend>
+    
+    <label for="note"> Note: </label>
+    <input name="note" type="text" [(ngModel)]="note">
+
+    <label for="behavior"> Behavior: </label>
+    <input name="behavior" type="text" [(ngModel)]="behavior">
+</fieldset>
+<button class="btnForm" (click)="createGrade()">Add Grade</button>
+</form>
+
+<div *ngIf="role == 'Teacher'">
+    <input name= "idInput" type="number" [(ngModel)]="studentId">
+    <button class="btnForm" (click)="getGradeByStudentId()">Search Grade</button>
+</div>
+
+<br>
+<thead>
+    <tr>
+        <th>grade Id</th>
+        <th>student Id</th>
+        <th>Time Reported</th>
+        <th>Note</th>
+        <th>Behavior</th>
+        <th *ngIf="role == 'Teacher'">Delete</th>
+    </tr>
+</thead>
+<tbody>
+<tr *ngFor="let g of grades">
+    <td>{{g.gradeId}}</td>
+    <td>{{g.studentId}}</td>
+    <td>{{g.timeReported * 1000 | date:'short'}}</td>
+    <td>{{g.note}}</td>
+    <td>{{g.behavior}}</td>
+    <td *ngIf="role == 'Teacher'"><button class="btnTable" (click)="deleteGrade(g.gradeId)">Delete Grade</button></td>
+</tr>
+</tbody>
+
